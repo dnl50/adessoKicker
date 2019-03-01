@@ -57,6 +57,8 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/")
                 .deleteCookies();
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 
     @Bean

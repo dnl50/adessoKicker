@@ -21,7 +21,7 @@ public class EmailService {
     private final String ACCEPT_URL = "http://localhost/notifications/accept/";
     private final String DECLINE_URL = "http://localhost/notifications/decline/";
 
-    private static SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+    private static final SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
     @Autowired
     public EmailService(EmailConfig emailConfig) {

@@ -1,10 +1,12 @@
 package de.adesso.kicker.configurations;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Component;
 
 @Component
+@Getter
 public class EmailConfig {
 
     @Value("${spring.mail.host}")
@@ -21,22 +23,6 @@ public class EmailConfig {
 
     @Value("${spring.mail.serveremail}")
     private String email;
-
-    public String getHost() {
-        return host;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 
     public JavaMailSenderImpl setMailServerConfig() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
